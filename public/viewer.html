@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Operator animation preview</title>
+    <link rel="stylesheet" href="/viewer.css" />
+    <script src="/viewer.js" type="module"></script>
+  </head>
+  <body>
+    <div id="status" role="status" aria-live="polite">
+      Loading the local sprite bundle…
+    </div>
+    <section id="skills" aria-label="Operator skills" hidden>
+      <p>SKILLS <span>Click an icon for a complete preview</span></p>
+      <div id="skill-buttons"></div>
+    </section>
+    <div id="skill-progress" hidden>
+      <span id="progress-label"></span>
+      <progress
+        id="remaining"
+        max="1"
+        value="1"
+        aria-label="Remaining skill duration"
+      ></progress>
+    </div>
+    <div id="stage" aria-label="Animated operator"></div>
+    <div class="ground" aria-hidden="true"></div>
+    <form id="controls" hidden>
+      <div class="animation-field">
+        <label for="animation">Animation</label
+        ><select id="animation"></select>
+      </div>
+      <div class="speed-field">
+        <label for="speed">Speed</label
+        ><select id="speed">
+          <option value="0.25">0.25×</option>
+          <option value="0.5">0.5×</option>
+          <option value="1" selected>1×</option>
+          <option value="1.5">1.5×</option>
+          <option value="2">2×</option>
+        </select>
+      </div>
+      <button id="play" type="button">Pause</button>
+      <button id="restart" type="button">Restart</button>
+      <button id="end-skill" type="button" hidden>End skill</button>
+      <button id="mirror" type="button" aria-pressed="false">Mirror</button>
+      <div class="zoom-field">
+        <label for="zoom">Zoom</label
+        ><input
+          id="zoom"
+          type="range"
+          min="0.5"
+          max="2.5"
+          value="1"
+          step="0.1"
+        />
+      </div>
+    </form>
+    <p id="clip-info"></p>
+  </body>
+</html>
